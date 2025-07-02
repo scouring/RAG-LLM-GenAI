@@ -62,9 +62,12 @@ search_results = [hit.payload for hit in hits]
 
 # Now time to connect to the local large language model
 from openai import OpenAI
+# client = OpenAI(
+#     base_url="http://127.0.0.1:8080/v1", # "http://<Your api-server IP>:port"
+#     api_key = "api-key"
+# )
 client = OpenAI(
-    base_url="http://127.0.0.1:8080/v1", # "http://<Your api-server IP>:port"
-    api_key = "api-key"
+    api_key = "api-key" # removed for security
 )
 completion = client.chat.completions.create(
     model="gpt-4-turbo",
