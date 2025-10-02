@@ -2,8 +2,6 @@
 
 This project demonstrates a **modern AI-powered wine recommendation system** using **vector embeddings**, **Qdrant vector database**, and a **large language model (LLM)** to deliver personalized suggestions based on user queries.  
 
-It’s a practical showcase of skills in **Python**, **NLP embeddings**, **semantic search**, and **LLM integration** — perfect for AI/ML portfolios.
-
 ---
 
 ## 🚀 Features
