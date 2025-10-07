@@ -35,7 +35,7 @@ qdrant.upload_points(
     ]
 )
 
-user_prompt = "Suggest me an amazing Malbec wine from Argentina"
+user_prompt = "Suggest me an amazing Merlot."
 
 # Search time for awesome wines!
 
