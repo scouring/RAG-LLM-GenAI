@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 import pandas as pd
+from qdrant_client import models, QdrantClient
+from sentence_transformers import SentenceTransformer
+from openai import OpenAI
+
 df = pd.read_csv(r'C:\Users\scour\RAG-LLM-GenAI\RAG-LLM-GenAI\top_rated_wines.csv')
 df = df[df['variety'].notna()] # remove any NaN values as it blows up serialization
 data = df.sample(700).to_dict('records') # Get only 700 records. More records will make it slower to index
 len(data)
-
-from qdrant_client import models, QdrantClient
-from sentence_transformers import SentenceTransformer
 
 encoder = SentenceTransformer('all-MiniLM-L6-v2') # Model to create embeddings
 
@@ -50,19 +51,18 @@ for hit in hits:
 search_results = [hit.payload for hit in hits]
 
 # Now time to connect to the local large language model
-from openai import OpenAI
 # client = OpenAI(
 #     base_url="http://127.0.0.1:8080/v1", # "http://<Your api-server IP>:port"
 #     api_key = "api-key"
 # )
 client = OpenAI(
-    api_key = "api-key" # removed for security
+    api_key = "" # removed for security
 )
 completion = client.chat.completions.create(
     model="gpt-4-turbo",
     messages=[
         {"role": "system", "content": "You are chatbot, a wine specialist. Your top priority is to help guide users into selecting amazing wine and guide them with their requests."},
-        {"role": "user", "content": "Suggest me an amazing Malbec wine from Argentina"},
+        {"role": "user", "content": "Suggest me an amazing Malbec from Argentina."},
         {"role": "assistant", "content": str(search_results)}
     ]
 )
