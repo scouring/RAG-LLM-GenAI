@@ -1,0 +1,5 @@
+pandas
+sentence-transformers
+qdrant-client
+openai
+python-dotenv==1.1.1
