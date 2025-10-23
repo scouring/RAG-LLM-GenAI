@@ -4,8 +4,7 @@ This project demonstrates a **modern AI-powered wine recommendation system** usi
 
 # Problem Statement
 
-This project demonstrates how an LLM can make suggestions like a sommalier. It could be deployed on an **Edge device**, like a kiosk in a 
-restaurant, making recommendations to customers. This type of LLM could **increase sales** via personalization, enhance the customer experience, differentiate brands, and **efficiently move inventory** with scalable knowledge capture from a sommelier in vector embeddings, **making it accessible 24/7 without requiring human staff**.
+This project demonstrates how an LLM can make suggestions like a sommalier. It could be deployed on an **Edge device**, like a digital kiosk, on dining tables in restaurants, making recommendations to consumers. This type of LLM could **increase sales** via personalization, enhance the customer experience, differentiate brands, and **efficiently move inventory** with scalable knowledge capture from a sommelier in vector embeddings, **making it accessible 24/7 without requiring human staff**.
 
 ---
 
@@ -34,9 +33,12 @@ restaurant, making recommendations to customers. This type of LLM could **increa
 - [Qdrant](https://qdrant.tech/) vector database
 - [OpenAI GPT-4 Turbo](https://platform.openai.com/docs/models/gpt-4)
 - [Pandas](https://pandas.pydata.org/) for data processing
-- Google Colab environment for quick prototyping
 
 ---
+
+## 🧠 System Architecture
+
+![RAG Architecture](images/architecture.png)
 
 ## ⚡ How It Works
 
@@ -52,7 +54,7 @@ restaurant, making recommendations to customers. This type of LLM could **increa
 ## 📝 Example Usage
 
 ```python
-user_prompt = "Suggest me an amazing Malbec wine from Argentina"
+user_prompt = "Suggest an amazing Malbec wine from Argentina"
 
 # Perform vector search
 hits = qdrant.search(
