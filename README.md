@@ -2,13 +2,18 @@
 
 This project demonstrates a **modern AI-powered wine recommendation system** using **vector embeddings**, **Qdrant vector database**, and a **large language model (LLM)** to deliver personalized suggestions based on user queries.  
 
+# Problem Statement
+
+This project demonstrates how an LLM can make suggestions like a sommalier. It could be deployed on an **Edge device**, like a kiosk in a 
+restaurant, making recommendations to customers. This type of LLM could **increase sales** via personalization, enhance the customer experience, differentiate brands, and **efficiently move inventory** with scalable knowledge capture from a sommelier in vector embeddings, **making it accessible 24/7 without requiring human staff**.
+
 ---
 
 ## 🚀 Features
 
 - **Vector Embeddings**: Uses [Sentence-Transformers](https://www.sbert.net/) `all-MiniLM-L6-v2` to encode wine tasting notes into numerical vectors.  
 - **Vector Database**: Leverages [Qdrant](https://qdrant.tech/) as an in-memory vector database to store and search embeddings efficiently.  
-- **Semantic Search**: Finds wines most relevant to a user query, e.g., "Suggest me an amazing Malbec from Argentina."  
+- **Semantic Search**: Finds wines most relevant to a user query, e.g., "Suggest an amazing Malbec from Argentina."  
 - **LLM Integration**: Connects search results to an OpenAI GPT-4 Turbo model to generate natural language recommendations.  
 - **Data Handling**: Cleans and samples wine dataset to ensure smooth embedding and indexing.
 
